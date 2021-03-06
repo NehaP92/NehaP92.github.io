@@ -46,19 +46,32 @@ def model_analysis(model,df):
 	
 	
 	### Splitting into 2 groups
-	
-	The outliers are removed based on quantiles using the IQR_remove_outlier() function.
-	
-	```
-	def IQR_remove_outlier(df, col):
-	
-    """Removes outlier based on IQR"""
-		
-    Q1 = df[col].quantile(0.25)
-    Q3 = df[col].quantile(0.75)
-    IQR = Q3-Q1
-    group = df[~((df[col]<(Q1-1.5*IQR)) | (df[col]>(Q3+1.5*IQR)))]
-    return group
-	```
-	
-	The model performance 
+
+The outliers are removed based on quantiles using the IQR_remove_outlier() function.
+
+```
+def IQR_remove_outlier(df, col):
+
+	"""Removes outlier based on IQR"""
+
+	Q1 = df[col].quantile(0.25)
+	Q3 = df[col].quantile(0.75)
+	IQR = Q3-Q1
+	group = df[~((df[col]<(Q1-1.5*IQR)) | (df[col]>(Q3+1.5*IQR)))]
+	return group
+```
+
+The model performance on group 1 increased to an R squared of 0.743
+
+*table
+
+We also see an improvement in the Q-Q plot and the improved homoscedasticity result:
+
+*images
+
+OLS regression on group 2 yeilded R squared of 0.746.
+
+*table
+
+The top 5 features affecting the house prices in normal range were found to be , while for the high end houses were .
+
