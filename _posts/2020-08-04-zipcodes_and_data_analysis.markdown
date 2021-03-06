@@ -34,7 +34,7 @@ def model_analysis(model,df):
     display(model.params.to_frame().style.background_gradient())
     display(model.pvalues<0.5)
     display(sm.graphics.qqplot(model.resid, stats.norm, line='45', fit = True));
-	```
+```
 	
 *plot
 
