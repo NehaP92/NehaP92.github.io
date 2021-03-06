@@ -36,16 +36,16 @@ def model_analysis(model,df):
     display(sm.graphics.qqplot(model.resid, stats.norm, line='45', fit = True));
 	```
 	
-	*plot
+*plot
+
+The homoscedasticity test also shows large hetroscedasticities, especially on the higher side.
 	
-	The homoscedasticity test also shows large hetroscedasticities, especially on the higher side.
+*homoscedasticity plot
 	
-	*homoscedasticity plot
-	
-	The first instinct to improve our model performance is to remove the outliers, but we will use these outliers to build a second model fitting these, for they would represent the few high end houses in King County.
+The first instinct to improve our model performance is to remove the outliers, but we will use these outliers to build a second model fitting these, for they would represent the few high end houses in King County.
 	
 	
-	### Splitting into 2 groups
+### Splitting into 2 groups
 
 The outliers are removed based on quantiles using the IQR_remove_outlier() function.
 
