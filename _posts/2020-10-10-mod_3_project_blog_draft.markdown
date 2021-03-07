@@ -5,11 +5,9 @@ date:       2020-10-10 03:00:16 -0400
 permalink:  mod_3_project_blog_draft
 ---
 
-**Blog under draft...**
-
 Formation Evaluation has played an important role in many industries including but not limited to oil & gas, geothermal, and mining. It is also used to determine the facies of a certain rock formation based on the log readings measured during the exploration process. Facies determine the properties of that formation, the result of which is important to determine the presence of oil/gas/water, geothermal properties, etc. Different facies have different log measures and trends based on their properties.
 
-*image
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/img_closeup.png)
 
 The data used for this classification model takes its input from 5 log readings (Gamma Ray (GR), Resisitivity (ILD_log10), Photoelectric Effect (PE), Neutron-Density Porosity Difference (DeltaPHI), Neutron-Density Porosity (PHID)) at multiple depth intervals and classifies the facies into 9 listed below.
 
@@ -151,18 +149,17 @@ cv.best_params_
 
 Based on the classification report, the f1-macro-average score was 0.82.
 
-*table
-
 Looking at the individual errors, Facies 1, 5 and 9 seem to perform well with less errors (low false negatives) Facies 2 seem so show some errors while separating from 3 since both these facies share some similar properties. Similarly, 6 and 8 seem to show some mix ups. Facies 4 seem to have a few false negatives belonging to 6 and 8. A possible explaination of this relies on the size of the grains of these formations. Some of the logs determine porosity of the formation which depends largly on brain size and volumes.
 
-*image
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/KNN_matrix.png)
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/KNN_error.png)
 
 Feature correlation using KNN show that Marine-Non-Marine, PE log values, one of the formations, resistivity log, and depth have high positive influence on the classification inthat respective order, while Gamma ray values, N-D porosity, Delta N-D negatively influence the classification.
 
-*image
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/feature_corr_KNN.png)
 
 Shapiro feature ranking shows the importance of these features to lie in the line of Resistivity N-D Porosity having the greatest influence regardless of the direction, followed by depth, GR, PE, and Relative position.
 
-*image
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-3-project-v2-1-onl01-dtsc-pt-041320/master/KNN_shapiro.png)
 
 The best classifier was selected based on a comparative analysis of various other scikit learn classifiers: Random Forest, Decision Tree, SVM, etc. Using pipelines reduces the amount of time utilized and lines of codes required to build all the models and is hence the most usefull tool for effective classification modellig.
