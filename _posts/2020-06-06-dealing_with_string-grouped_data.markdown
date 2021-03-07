@@ -6,8 +6,6 @@ permalink:  dealing_with_string-grouped_data
 ---
 
 
-**Blog still in Draft......**
-
 Sometimes, the different elements of a data table are categorized into multiple groups indicated corresponding to each element as a string in a column. Consider, for example, an informative data table about various movies over a period of time. One of the data table columns indicates the 'genre' of a movie. Movies nowadays belong to multiple genres. For instance, "The Avengers" can be categorized under action, adventure, and sci-fi. The 'genre' column of the data-table may use a comma-separated string to define this. 
 
 But what if we want to analyze individual genres? One way is to split the string and separate the genres into multiple rows. A function that separates each genre/category into multiple rows and returns the corresponding values of interest could go a long way when dealing with several categories.
@@ -80,6 +78,8 @@ Lets have a look at what the output looks like.
 genre_bg(a_genre = 'Action')
 ```
 
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-1-project-v2-1-onl01-dtsc-pt-041320/master/genre_bg(a_genre%20Action)_output.png)
+
 You may then either analyze each table individually or, make a comparative analysis by joining these tables using the `concat()` method.
 
 ```
@@ -97,6 +97,8 @@ for table in tables_list:
     table_1 = pd.concat([table_1, table])
 ```
 
-And heres what the final outcome looks like.
+And thats what the final outcome looks like.
+
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-1-project-v2-1-onl01-dtsc-pt-041320/master/table_1%20all%20genre%20output.png)
 
 Happy analysing! 
