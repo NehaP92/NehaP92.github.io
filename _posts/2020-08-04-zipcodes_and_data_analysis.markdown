@@ -73,3 +73,4 @@ OLS regression on group 2 yeilded R squared of 0.746.
 
 The top features affecting the house prices in normal range were found to be waterfront, view, area in sqft, condition, and location while for the high end houses were location, renovation, and condition.
 
+You may try splitting the modle further into more groups for better analysis and results.
