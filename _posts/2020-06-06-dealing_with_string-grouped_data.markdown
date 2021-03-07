@@ -65,7 +65,7 @@ def genre_bg(a_genre = ''):
 
 
 
-** Breaking down the code:**
+**Breaking down the code:**
 An empty dictionary is created that takes in the keys 'Genre' - for the unique genre of interest, 'Budget' - list of all budgets corresponding to that genre, and 'Gross' - list of all gross values corresponding to that genre. We then used a for-loop to generate the dictionary values as a list of corresponding budget and gross values.
 
 The `enumerate()` method splits the series into rows of tuples (index, value). We utilized this method to check if the genre string contains the genre of interest. If it does, it looks at the index of that row and then returns the value of budget and gross corresponding to that index.
