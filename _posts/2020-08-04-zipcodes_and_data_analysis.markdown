@@ -11,7 +11,7 @@ When it comes to investing in real estate, the decision might sometime seem pret
 
 The data used for this analysis is extracted from the king county house data. The features were first identified and categorized into numerical and categorical data. The numerical features are scaled using scikit learn's RobustScalar method, while the categorical data is one hot encoded to make the format usable with the statsmodel OLS regression function. The results below show the performance of the OLS regression fit on the entire data set before spiltting the price ranges into the normal and highend houses.
 
-*table
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-2-project-online-pt-041320/master/model_results_base.png)
 
 The model yeilded an R squared of 0.703. Further analysis on the validity of this model, using the model_analysis() function shows that the data is not normal and there seems to be large number of outliers on the higher end.
 
@@ -36,11 +36,11 @@ def model_analysis(model,df):
     display(sm.graphics.qqplot(model.resid, stats.norm, line='45', fit = True));
 ```
 	
-*plot
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-2-project-online-pt-041320/master/base_QQ.png)
 
 The homoscedasticity test also shows large hetroscedasticities, especially on the higher side.
 	
-*homoscedasticity plot
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-2-project-online-pt-041320/master/base_hom.png)
 	
 The first instinct to improve our model performance is to remove the outliers, but we will use these outliers to build a second model fitting these, for they would represent the few high end houses in King County.
 	
@@ -63,15 +63,15 @@ def IQR_remove_outlier(df, col):
 
 The model performance on group 1 increased to an R squared of 0.743
 
-*table
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-2-project-online-pt-041320/master/group1_model.png)
 
 We also see an improvement in the Q-Q plot and the improved homoscedasticity result:
 
-*images
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-2-project-online-pt-041320/master/group1_analysis.png)
 
 OLS regression on group 2 yeilded R squared of 0.746.
 
-*table
+![](https://raw.githubusercontent.com/NehaP92/dsc-mod-2-project-online-pt-041320/master/group2_model2.png)
 
-The top 5 features affecting the house prices in normal range were found to be , while for the high end houses were .
+The top features affecting the house prices in normal range were found to be waterfront, view, area in sqft, condition, and location while for the high end houses were location, renovation, and condition.
 
