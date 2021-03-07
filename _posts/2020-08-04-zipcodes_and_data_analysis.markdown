@@ -5,8 +5,6 @@ date:       2020-08-04 07:03:10 -0400
 permalink:  zipcodes_and_data_analysis
 ---
 
-**Blog still under Draft...**
-
 When it comes to investing in real estate, the decision might sometime seem pretty combursome due to the range of factors affecting the vairation in prices. It is helpful to start with a general analysis based on the location, and then split the price range into groups for a proper regression fit. The split makes our model more effective since it removes the high and low-end houses as outliers from the basis average prices, while the location provides us with the information on where the houses from each group are most likely located.
 
 The data used for this analysis is extracted from the king county house data. The features were first identified and categorized into numerical and categorical data. The numerical features are scaled using scikit learn's RobustScalar method, while the categorical data is one hot encoded to make the format usable with the statsmodel OLS regression function. The results below show the performance of the OLS regression fit on the entire data set before spiltting the price ranges into the normal and highend houses.
