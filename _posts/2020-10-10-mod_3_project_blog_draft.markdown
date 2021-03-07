@@ -5,6 +5,8 @@ date:       2020-10-10 03:00:16 -0400
 permalink:  mod_3_project_blog_draft
 ---
 
+**Blog under draft...**
+
 Formation Evaluation has played an important role in many industries including but not limited to oil & gas, geothermal, and mining. It is also used to determine the facies of a certain rock formation based on the log readings measured during the exploration process. Facies determine the properties of that formation, the result of which is important to determine the presence of oil/gas/water, geothermal properties, etc. Different facies have different log measures and trends based on their properties.
 
 *image
